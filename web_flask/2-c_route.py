@@ -28,6 +28,7 @@ def widlcard(text):
     """
     Widlcard usage
     """
+    text = text.replace("_", " ")
     return f"C {text}"
 
 
