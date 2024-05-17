@@ -32,9 +32,9 @@ def widlcard(text):
     return f"C {text}"
 
 
-@app.route("/python/", default={"text": "is cool"}, strict_slashes=False)
+@app.route("/python/", defaults={"text": "is cool"}, strict_slashes=False)
 @app.route("/python/<text>", strict_slashes=False)
-def widlcardtwo(text):
+def widlcard_two(text):
     """
     Wildcard second
     """
