@@ -28,7 +28,7 @@ def widlcard(text):
     """
     Widlcard usage
     """
-    return f"{text}"
+    return f"C {text}"
 
 
 if __name__ == '__main__':
