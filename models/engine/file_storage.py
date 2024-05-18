@@ -63,3 +63,6 @@ class FileStorage:
                 del self.__objects[key]
                 return
 
+    def close(self):
+        """ close reload json object """
+        self.reload()

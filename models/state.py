@@ -12,8 +12,8 @@ class State(BaseModel, Base):
     name = Column(String(128), nullable=False)
     cities = relationship("City", cascade="all, delete, delete-orphan", backref="state")
 
-    @property
-    def cities(self):
-        lista = [city for city in models.storage.all() if
-            isinstance(city, City) and city.state_id == State.id]
-        return lista
+    if models.storage_t != 'db':
+        @property
+        def cities(self):
+            """Getter method for cities when storage is not DBStorage"""
+            return [city for city in models.storage.all(City).values() if city.state_id == self.id]
