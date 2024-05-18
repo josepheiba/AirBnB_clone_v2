@@ -55,7 +55,7 @@ def number_trois(num):
     """
     number wildcard
     """
-    return render_template('templates/5-number.html', num=num)
+    return render_template('5-number.html', num=num)
 
 
 if __name__ == '__main__':
