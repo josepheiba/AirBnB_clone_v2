@@ -13,7 +13,9 @@ def states_route():
     """
     7 route states
     """
-    return render_template('7-states_list.html', storage=storage.all('State'))
+    states = storage.all('State')
+    sorted_states = sorted(states.values(), key=lambda state: state.name)
+    return render_template('7-states_list.html', storage=sorted_states)
 
 
 @app.teardown_appcontext
