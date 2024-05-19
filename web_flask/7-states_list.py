@@ -13,7 +13,9 @@ def states_route():
     """
     7 route states
     """
-    return render_template('7-states_list.html', storage=storage.all('State'))
+    states = storage.all('State')
+    sorted_states = sorted(states.values(), key=lambda state: state.name)
+    return render_template('7-states_list.html', states=sorted_states)
 
 
 @app.teardown_appcontext
@@ -23,4 +25,4 @@ def closer(exception):
 
 if __name__ == '__main__':
     app.url_map.strict_slashes = False
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5000)
