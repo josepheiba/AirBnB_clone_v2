@@ -13,8 +13,7 @@ def states_route():
     """
     7 route states
     """
-    states = storage.all('State')
-    return render_template('7-states_list.html', states=states)
+    return render_template('7-states_list.html', storage=storage.all('State'))
 
 
 @app.teardown_appcontext
