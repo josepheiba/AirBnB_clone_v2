@@ -13,7 +13,7 @@ def states_route():
     """
     7 route states
     """
-    return render_template('7-states_list.html', data=storage.all('State'))
+    return render_template('7-states_list.html', storage=storage.all('State'))
 
 
 @app.teardown_appcontext
@@ -22,4 +22,4 @@ def closer(exception):
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=500, debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
