@@ -13,11 +13,15 @@ def states_route():
     """
     7 route states
     """
-    return render_template('7-states_list.html', storage=storage.all('State'))
+    states = storage.all('State')
+    return render_template('7-states_list.html', states=states)
 
 
 @app.teardown_appcontext
 def closer(exception):
+    """
+    Closes the storage on teardown
+    """
     storage.close()
 
 
